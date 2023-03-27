@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <link rel="stylesheet" href="Style.css">
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <link rel="preconnect" href="https://fonts.googleapis.com">
+   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+   <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@200;300&display=swap" rel="stylesheet">
+   <link rel="preconnect" href="https://fonts.googleapis.com">
+   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+   <link href="https://fonts.googleapis.com/css2?family=Lato:wght@100&family=Raleway:wght@200;300&display=swap"
+      rel="stylesheet">
+   <link rel="shortcut icon" style="filter:invert();" href="logos/logo.ico">
+   <title>ENES ROBINSON</title>
+
+
+</head>
+
+<body>
+   <div class="logo-container"><img class="logo" src="logos/logo.png" alt="enes" width="96px"></div>
+   <nav role="navigation">
+      <div id="menuToggle">
+         <!--
+               A fake / hidden checkbox is used as click reciever,
+               so you can use the :checked selector on it.
+               -->
+         <input type="checkbox" />
+         <!--
+               Some spans to act as a hamburger.
+               
+               They are acting like a real hamburger,
+               not that McDonalds stuff.
+               -->
+         <span></span>
+         <span></span>
+         <span></span>
+         <!--
+               Too bad the menu has to be inside of the button
+               but hey, it's pure CSS magic.
+               -->
+         <ul id="menu">
+            <a href="#last-release">
+               <li>Home</li>
+            </a>
+            <a href="#latest-releases">
+               <li>Latest releases</li>
+            </a>
+            <a href="https://www.google.com/">
+               <li>Enes Robinson</li>
+            </a>
+            <a href="https://www.google.com/">
+               <li>Mission</li>
+            </a>
+            <a href="https://www.google.com/">
+               <li>Merch store</li>
+            </a>
+            <a href="#">
+               <li>Contact/Booking</li>
+            </a>
+            <a href="#" target="_blank">
+               <li>BLUE DIMENSION™</li>
+            </a>
+         </ul>
+      </div>
+   </nav>
+   <section id="last-release">
+      <button class="show-modal">L I S T E N </button>
+      <span class="overlay"></span>
+      <div class="modal-box">
+         <i class="fa-regular fa-circle-check"></i>
+         <a href=""><img class="artwork" src="pics/artwork.png" alt="" width="240"></a>
+         <h3>Listen on</h3>
+         <a href=""><img class="logo" src="logos/sf.png" alt="" width="128px"></a>
+         <a href=""><img class="logo" src="logos/dr.png" alt="" width="160px"></a>
+         <a href=""><img class="logo" src="logos/yb.png" alt="" width="160px"></a>
+         <a href=""><img class="logo" src="logos/am.svg" alt="" width="160px"></a>
+         <a href=""><img class="logo" src="logos/pn.png" alt="" width="160px"></a>
+         <a href=""><img class="logo" src="logos/td.png" alt="" width="160px"></a>
+         <a href="#" class="close-btn"><img src="icons/close.png" width="15px" alt=""></a>
+      </div>
+      <script>
+         const section = document.querySelector('section'),
+            overlay = document.querySelector('.overlay'),
+            showBtn = document.querySelector('.show-modal'),
+            closeBtn = document.querySelector('.close-btn');
+
+         showBtn.addEventListener('click', () => {
+            section.classList.add('active');
+         });
+
+         closeBtn.addEventListener('click', () => {
+            section.classList.remove('active');
+         });
+         overlay.addEventListener('click', () => {
+            section.classList.remove('active');
+         });
+      </script>
+      <a class="scrol-container" href="#latest-releases">
+         <Div class="scrol" style="width: 1.6em; height: 1.6em; background-color: transparent; z-index:80; 
+               bottom: 25px; position: absolute; border-width: 0 0.25em 0.25em 0; border-style:
+               solid; border-color: antiquewhite; animation: scrolldown 1.2s ease-in-out infinite 0.15s;"></Div>
+         <Div class="scrol" style="width: 1.6em; height: 1.6em; background-color: transparent; z-index: 80; 
+               bottom: 40px; position: absolute; border-width: 0 0.25em 0.25em 0; border-style: solid; 
+               border-color: antiquewhite; animation: scrolldown 1.2s ease-in-out infinite;"></Div>
+      </a>
+   </section>
+   <section id="latest-releases">
+
+   </section>
+
+
+   <footer>
+      <p>
+         &copy; 2005-
+         <script type="text/javascript">document.write(new Date().getFullYear());</script> ENES ROBINSON All rights
+         reserved.
+      </p>
+   </footer>
+</body>
+
+</html>
+<div>
+   

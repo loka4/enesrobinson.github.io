@@ -1,0 +1,470 @@
+ 
+/** GENERAL SECTION **/
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    
+}
+body, html {
+    
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: 'Raleway', sans-serif;
+    scroll-behavior: smooth;
+}
+#menuToggle {
+    display: block;
+    position: fixed;
+    top: 50px;
+    left: 50px;
+    z-index: 1;
+    -webkit-user-select: none;
+    user-select: none;
+}
+#menuToggle a {
+    text-decoration: none;
+    color: #ffffff;
+    transition: color 0.3s ease;
+}
+#menuToggle a:hover {
+    color: rgb(238, 33, 15);
+}
+#menuToggle input {
+    display: block;
+    width: 40px;
+    height: 32px;
+    position: absolute;
+    top: -7px;
+    left: -5px;
+    cursor: pointer;
+    opacity: 0;
+   /* hide this */
+    z-index: 2;
+   /* and place it over the hamburger */
+    -webkit-touch-callout: none;
+}
+/* * Just a quick hamburger */
+#menuToggle span {
+    display: block;
+    width: 26.4px;
+    height: 3.2px;
+    margin-bottom: 5px;
+    position: relative;
+    background: #cdcdcd;
+    border-radius: 3px;
+    z-index: 1;
+    transform-origin: 4px 0px;
+    transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0), background 0.5s cubic-bezier(0.77,0.2,0.05,1.0), opacity 0.55s ease;
+}
+#menuToggle span:first-child {
+    transform-origin: 0% 0%;
+}
+#menuToggle span:nth-last-child(2) {
+    transform-origin: 0% 100%;
+}
+/* * Transform all the slices of hamburger * into a crossmark. */
+#menuToggle input:checked ~ span {
+    opacity: 1;
+    transform: rotate(45deg) translate(-1px, 1px);
+    background: #ffffff;}
+/* * But let's hide the middle one. */
+#menuToggle input:checked ~ span:nth-last-child(3) {
+    opacity: 0;
+    transform: rotate(0deg) scale(0.2, 0.2);
+}
+/* * Ohyeah and the last one should go the other direction */
+#menuToggle input:checked ~ span:nth-last-child(2) {
+    transform: rotate(-45deg) translate(0, -1px);
+}
+/* * Make this absolute positioned * at the top left of the screen */
+@supports (-webkit-backdrop-filter: none) or (backdrop-filter: none){
+    #menu {
+        -webkit-backdrop-filter: blur(30px);
+        backdrop-filter: blur(30px);
+        background-color: transparent;
+   }
+}
+#menu {
+    position: absolute;
+    width: 300px;
+    margin: -100px 0 0 -50px;
+    padding: 50px;
+    padding-right: 0;
+    padding-top: 125px;
+    height: 103vh;
+    background-color: transparent;
+    border-right: solid 0.2px rgba(255, 255, 255, 0.186);
+    list-style-type: none;
+    -webkit-font-smoothing: antialiased;
+   /* to stop flickering of text in safari */
+    transform-origin: 0% 0%;
+    transform: translate(-100%, 0);
+    transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0);
+}
+#menu li {
+    padding: 10px 0;
+    font-size: 17.6px;
+    margin-top: 15px;
+}
+
+/* * And let's slide it in from the left */
+#menuToggle input:checked ~ ul {
+    transform: none;
+}
+/** Last release**/
+.scrol{
+    left: 49.07%;
+    position: relative;
+    transform: translateY(0%) rotate(45deg);
+    opacity: 0;
+    z-index: -1;
+}
+@keyframes scrolldown {
+    0%{
+        transform: translateY(20%) rotate(45deg);
+        opacity: 0.7;
+   }
+    50%{
+        transform: translateY(0%) rotate(45deg);
+        opacity: 0.2;
+   }
+    100%{
+        transform: translateY(20%) rotate(45deg);
+        opacity: 0.7;
+   }
+}
+.logo{
+   position: relative;
+    ;
+}
+.logo-container{
+   float: right;
+    top: 20px;
+    right: 20px;
+    position: fixed;
+    z-index: 100;
+}
+/** last release section **/
+
+@supports (-webkit-backdrop-filter: none) or (backdrop-filter: none){
+    button {
+        -webkit-backdrop-filter: blur(3px);
+        backdrop-filter: blur(3px);
+        
+        
+   }
+}
+#last-release{
+    height: 100vh;
+    /* The image used */
+    background-image: url("Pics/AVATAR1.jpg");
+   /* Add the blur effect */
+   /* Full height */
+   /* Center and scale the image nicely */
+    background-position:top;
+    background-repeat: no-repeat;
+    background-size:cover;
+    height: 100%;
+    background-attachment: fixed;
+    z-index: -1;
+}
+button {
+    border: solid 0.9px  rgba(255, 255, 255, 0.404);
+    font-size: 14.4px;
+    font-weight: 400;
+    color: rgb(255, 251, 251);
+    background-color: rgba(255, 255, 255, 0.126);
+    border-radius: 6px;
+    
+    padding: 14px 22px;
+    cursor: pointer;
+    transition: color 0.4s linear, background-color 0.5s linear;
+}
+button:hover {
+    background-color: rgb(255, 247, 247);
+    color: rgb(0, 0, 0);
+}
+button.show-modal,.modal-box {
+    position: absolute;
+    left: 50%;
+    top: 70%;
+    transform: translate(-50%, -50%);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+}
+section.active .show-modal {
+    display: none;
+}
+@supports (-webkit-backdrop-filter: none) or (backdrop-filter: none) {
+    .overlay {
+        -webkit-backdrop-filter: blur(5px);
+        backdrop-filter: blur(5px);
+        background-color: rgba(0, 0, 0, 0.487);
+        z-index: 90;
+   }
+}
+.overlay {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    
+    opacity: 0;
+    pointer-events: none;
+}
+section.active .overlay, section.active .modal-box {
+    opacity: 1;
+    pointer-events: auto;
+}
+section.active .modal-box {
+    transform: translate(-50%, -50%) scale(1);
+}
+@supports (-webkit-backdrop-filter: none) or (backdrop-filter: none) {
+    .modal-box {
+        -webkit-backdrop-filter: blur(30px);
+        backdrop-filter: blur(30px);
+        background-color: transparent;
+        z-index: 1;
+   }
+}
+.modal-box {
+    border: solid 0.7px rgba(199, 198, 198, 0.388);
+    z-index: 90;
+    text-align: center;
+    width: 100%;
+    max-width: 640px;
+    border-radius: 24px;
+    padding: 30px 20px;
+    opacity: 0;
+    pointer-events: none;
+    height: auto;
+    transition: all 0.3s ease-in;
+    transform: translate(-50%, -50%) scale(1.2);
+    top: 50%;
+}
+.modal-box .logo {
+    margin-top:30px ;
+    margin: 25px;
+    text-align: center;
+    
+    
+}
+.modal-box .artwork {
+    margin-top:30px ;
+    margin: 25px;
+    text-align: center;
+    border: solid 0.8px rgba(255, 255, 255, 0.472);
+}
+.modal-box i {
+    font-size: 70px;
+    color: #4070f4;
+}
+.modal-box h3 {
+    font-size: 25px;
+    font-weight: 600;
+    color: rgb(255, 255, 255);
+    text-align: center;
+}
+.modal-box .close-btn img{
+    float:right;
+    position: absolute;
+    right: 0;
+    top: 0;
+    margin-right: 20px;
+    margin-top: 16px;
+    background-color: transparent;
+}
+.modal-box .buttons {
+    margin-top: 25px;
+}
+.modal-box button {
+    font-size: 14px;
+    font-weight: 400;
+    padding: 6px 12px;
+    margin: 0 10px;
+}
+/** seconds section**/
+#latest-releases{background-image: url(pics/AVATAR2.jpg);
+    background-size: cover;
+height: 100%;
+position:relative;
+}
+
+.title{color: #fff;
+float: right;
+top: 10vh;
+position: inherit;
+font-family: Raleway;
+font-size: 50px;
+right: 37vh}
+
+body {
+    background: #000; }
+  
+  .is-loading canvas {
+    opacity: 0; }
+  
+  .is-loading .is-loading-msg {
+    opacity: 1; }
+  
+  svg {
+    display: flex;
+    width: 100%;
+    height: 100%; }
+  
+  .is-loading-msg {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 142px;
+    height: 46px;
+    color: #EEEEEE;
+    font-family: 'Bebas Neue', cursive;
+    font-size: 2em;
+    opacity: 0;
+    transition: opacity 300ms ease-in-out;
+    pointer-events: none; }
+    .is-loading-msg::after {
+      content: '';
+      position: absolute;
+      bottom: -10px;
+      left: 50%;
+      margin-left: -15px;
+      width: 30px;
+      height: 2px;
+      border-radius: 4px;
+      background: #8baea5;
+      animation: loading infinite 1s alternate ease-in-out; }
+  
+  canvas {
+    display: block; }
+  
+  #images {
+    position: fixed;
+    left: -99999;
+    width: 1px;
+    height: 1px;
+    overflow: hidden; }
+  
+  @keyframes loading {
+    from {
+      transform: translate3d(-50%, 0, 0); }
+    to {
+      transform: translate3d(50%, 0, 0); } }
+  
+
+
+
+
+/** contact section* */
+.contact{
+    height: 100vh;
+    ;
+}
+.container{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px 100px;
+}
+.container:after{
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    background: url("Pics/AVATAR1.jpg") no-repeat center;
+    background-size: cover;
+    filter: blur(50px);
+    z-index: -1;
+}
+.contact-box{
+    max-width: 850px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-color:transparent;
+    box-shadow: 0px 0px 19px 5px rgba(0,0,0,0.19);
+}
+.left{
+    background: url("img/bg.jpg") no-repeat center;
+    background-size: cover;
+    height: 100%;
+}
+.right{
+    padding: 25px 40px;
+}
+h2{
+    position: relative;
+    padding: 0 0 10px;
+    margin-bottom: 10px;
+}
+h2:after{
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    transform: translateX(-50%);
+    height: 4px;
+    width: 50px;
+    border-radius: 2px;
+    background-color: #2ecc71;
+}
+.field{
+    width: 100%;
+    border: 2px solid rgba(0, 0, 0, 0);
+    outline: none;
+    background-color: rgba(230, 230, 230, 0.6);
+    padding: 0.5rem 1rem;
+    font-size: 1.1rem;
+    margin-bottom: 22px;
+    transition: .3s;
+}
+.field:hover{
+    background-color: rgba(0, 0, 0, 0.1);
+}
+textarea{
+    min-height: 150px;
+}
+.btn{
+    width: 100%;
+    padding: 0.5rem 1rem;
+    background-color: #2ecc71;
+    color: #fff;
+    font-size: 1.1rem;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    transition: .3s;
+}
+.btn:hover{
+    background-color: #27ae60;
+}
+.field:focus{
+    border: 2px solid rgba(30,85,250,0.47);
+    background-color: #fff;
+}
+@media screen and (max-width: 880px){
+    .contact-box{
+        grid-template-columns: 1fr;
+   }
+    .left{
+        height: 200px;
+   }
+}
+footer {
+    background-color: #000000;
+    color: rgba(255, 249, 249, 0.7);
+    padding: 32px;
+    position: relative;
+    width: 100%;
+    bottom: 0;
+    text-align: center;
+}

@@ -232,7 +232,7 @@ section.active .modal-box {
     z-index: 90;
     text-align: center;
     width: 100%;
-    max-width: 640px;
+    max-width: 500px;
     border-radius: 24px;
     padding: 30px 20px;
     opacity: 0;

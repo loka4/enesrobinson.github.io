@@ -3,6 +3,17 @@
 
 <head>
    <script>
+      let uxsState = setInterval(() => { 
+        if (document.readyState === 'complete') { 
+          if(typeof uxsniff != 'undefined'){
+            uxsniff.identify({    
+              "id": "userID"
+            });
+            clearInterval(uxsState);
+      }}},1000);
+    </script>
+   <script>
+   
     (function(u,x,s,n,i,f){
         u.ux=u.ux||function(){(u.ux.q=u.ux.q||[]).push(arguments)};
         u._uxSettings={uxid:'158737259-1',uxv:'U'};
